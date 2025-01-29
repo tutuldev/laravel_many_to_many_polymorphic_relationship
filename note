@@ -1,0 +1,34 @@
+php artisan make:model Post -mcr
+php artisan make:model Tag -mcr
+php artisan make:model Video -mcr
+
+-- Insert 3 Fake Data for Videos Table
+INSERT INTO videos (title, url) VALUES
+('Video Title One', 'video/first.mp4'),
+('Video Title Two', 'video/second.mp4'),
+('AVideo Title Three', 'video/third.mp4');
+
+-- Insert 3 Fake Data for Posts Table
+INSERT INTO posts (title, description) VALUES
+('News Title One', 'This is an introduction to Laravel.'),
+('News Title Two', 'Learn how to manage relationships in Laravel.'),
+('News Title Three', 'Learn about Laravel templating engine Blade.');
+
+-- Insert 7 Fake Data for Tags Table
+INSERT INTO tags (tag_name) VALUES
+('Bollywood'),
+('Hollywood'),
+('Salman Khan'),
+('Shahid Kapoor'),
+('Deepika'),
+('Tom Hank'),
+('Amold');
+
+-- Insert 6 Fake Data for Taggables Table
+INSERT INTO taggables (tag_id, taggable_id, taggable_type) VALUES
+(1, 1, 'App\\Models\\Post'),
+(3, 1, 'App\\Models\\Post'),
+(1, 2, 'App\\Models\\Post'),
+(5, 2, 'App\\Models\\Post'),
+(1, 1, 'App\\Models\\Video'),
+(4, 1, 'App\\Models\\Video');
